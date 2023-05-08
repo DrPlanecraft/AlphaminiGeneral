@@ -1,6 +1,6 @@
 import asyncio
 import logging
-
+import AlphaminiConfig
 import mini.mini_sdk as MiniSdk
 from mini.dns.dns_browser import WiFiDevice
 
@@ -17,7 +17,7 @@ async def test_get_device_by_name():
         WiFiDevice: 包含机器人名称,ip,port等信息
 
     """
-    result: WiFiDevice = await MiniSdk.get_device_by_name("00879", 10)
+    result: WiFiDevice = await MiniSdk.get_device_by_name(AlphaminiConfig.SerialNum, 10)
     print(f"test_get_device_by_name result:{result}")
     return result
 
@@ -77,15 +77,10 @@ async def shutdown():
     await MiniSdk.release()
 
 
-# 默认的日志级别是Warning, 设置为INFO
-MiniSdk.set_log_level(logging.INFO)
-# 设置机器人类型
-MiniSdk.set_robot_type(MiniSdk.RobotType.DEDU)
-
-
 async def main():
     device: WiFiDevice = await test_get_device_by_name()
     if device:
+        await test_get_device_list()
         await test_connect(device)
         await shutdown()
 

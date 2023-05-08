@@ -14,13 +14,7 @@ from test.test_connect import test_get_device_by_name, test_start_run_program
 
 
 async def test_speech_recognise():
-    """测试监听语音识别
-
-    监听语音识别事件，校验识别是否成功，识别的结果文本是否有值，把结果存入result数组
-
-    延时5s，结束函数，校验result中是否有值
-
-    """
+    
     result = []
 
     observer: ObserveSpeechRecognise = ObserveSpeechRecognise()

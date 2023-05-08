@@ -1,6 +1,5 @@
 import mini.pkg_tool as Tool
-
-robot_id = "0090"
+from AlphaminiConfig import SerialNum as robot_id
 
 if __name__ == '__main__':
     # 查询alphamini包信息
