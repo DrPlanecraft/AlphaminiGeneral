@@ -1,13 +1,12 @@
 # Imports
-import asyncio
 import logging
-
 import mini.mini_sdk as MiniSdk
 from mini.dns.dns_browser import WiFiDevice
 
 # attribuites
 SerialNum = "100893"
 
+# Setup the WiFi device but not run MiniSdk.connect(device)
 async def setup(robotSerialNumber=SerialNum):
     # Alphamini Initiate
     MiniSdk.set_log_level(logging.INFO)
