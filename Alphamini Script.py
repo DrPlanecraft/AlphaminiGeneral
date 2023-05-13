@@ -23,8 +23,10 @@ Expression_Sneeze = PlayExpression(express_name="codemao9")
 
 async def main():
     # Setup for Programming Mode.
-    await MiniSdk.connect(AlphaminiConfig.setup())
+    config = await AlphaminiConfig.setup()
+    await MiniSdk.connect(config)
     await enter_programmingMode()
+
 
     # Perform Programmed Actions
     await TTS_say.execute()
