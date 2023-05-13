@@ -11,7 +11,7 @@ from mini.apis.api_observe import ObserveSpeechRecognise, SpeechRecogniseRespons
 from mini.dns.dns_browser import WiFiDevice
 from test.test_connect import test_connect, shutdown
 from test.test_connect import test_get_device_by_name, test_start_run_program
-
+import AlphaminiConfig
 
 async def test_speech_recognise():
     
